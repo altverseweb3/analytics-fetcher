@@ -1,0 +1,65 @@
+name: Analytics Data Aggregation
+
+on:
+  schedule:
+    # Run every 6 hours (at minutes 0 past hours 0, 6, 12, 18)
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  aggregate-analytics:
+    runs-on: ubuntu-latest
+    env:
+      # Secrets to be set in your repository's settings
+      ANALYTICS_API_KEY: ${{ secrets.ANALYTICS_API_KEY }}
+      ALTVERSE_API_URL: ${{ secrets.ALTVERSE_API_URL }}
+      VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run analytics fetcher and rename output
+        run: |
+          # Run the python script which creates 'analytics_dump.json'
+          python analytics_fetcher.py
+
+          # Create the new filename with a unix timestamp
+          TIMESTAMP=$(date +%s)
+          NEW_FILENAME="analytics-${TIMESTAMP}.json"
+
+          # Rename the file
+          mv analytics.json ${NEW_FILENAME}
+
+          # Pass the new filename to subsequent steps
+          echo "ANALYTICS_FILENAME=${NEW_FILENAME}" >> $GITHUB_ENV
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "analytics-fetcher[bot]@users.noreply.github.com"
+          git config --local user.name "analytics-fetcher[bot]"
+
+      - name: Commit and push if changed
+        run: |
+          git add ${{ env.ANALYTICS_FILENAME }}
+          # Verify there are changes to commit (so as not to create empty commits)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update analytics data $(date +'%Y-%m-%d')" && git push)
+
+      - name: Wait for GitHub synchronization
+        # Gives a few seconds for the push to be processed before any potential next step
+        run: sleep 10s
+
+      # - name: Trigger Vercel Deployment
+      #   run: |
+      #     curl -X POST "$VERCEL_DEPLOY_HOOK_URL"
