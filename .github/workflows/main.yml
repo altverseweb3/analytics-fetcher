@@ -60,6 +60,6 @@ jobs:
         # Gives a few seconds for the push to be processed before any potential next step
         run: sleep 10s
 
-      # - name: Trigger Vercel Deployment
-      #   run: |
-      #     curl -X POST "$VERCEL_DEPLOY_HOOK_URL"
+      - name: Trigger Vercel Deployment
+        run: |
+          curl -X POST "$VERCEL_DEPLOY_HOOK_URL"

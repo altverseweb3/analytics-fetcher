@@ -10,7 +10,7 @@ BASE_URL = os.environ.get("ALTVERSE_API_URL")
 PERIODIC_JOBS = [
     {"period_type": "daily", "limit": 30},
     {"period_type": "weekly", "limit": 54},
-    {"period_type": "monthly", "limit": 24},
+    {"period_type": "monthly", "limit": 12},
 ]
 
 
