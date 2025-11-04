@@ -32,7 +32,7 @@ jobs:
 
       - name: Run analytics fetcher and rename output
         run: |
-          # Run the python script which creates 'analytics_dump.json'
+          # Run the python script which creates 'analytics.json'
           python analytics_fetcher.py
 
           # Create the new filename with a unix timestamp
