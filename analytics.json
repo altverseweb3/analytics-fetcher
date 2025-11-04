@@ -7,7 +7,7 @@
     "swap_count": 35,
     "lending_count": 1,
     "earn_count": 1,
-    "dapp_entrances": 102,
+    "dapp_entrances": 103,
     "total_users": 5
   },
   "total_swap_stats": {
@@ -207,7 +207,7 @@
           "swap_count": 0,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 0,
+          "dapp_entrances": 1,
           "active_users": 0,
           "transactions_per_active_user": 0
         },
@@ -1384,7 +1384,7 @@
           "swap_count": 3,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 12,
+          "dapp_entrances": 13,
           "active_users": 2,
           "transactions_per_active_user": 1.5
         },
@@ -3045,7 +3045,7 @@
           "swap_count": 25,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 36,
+          "dapp_entrances": 37,
           "active_users": 3,
           "transactions_per_active_user": 8.333333333333334
         },
