@@ -11,7 +11,6 @@ jobs:
   aggregate-analytics:
     runs-on: ubuntu-latest
     env:
-      # Secrets to be set in your repository's settings
       ANALYTICS_API_KEY: ${{ secrets.ANALYTICS_API_KEY }}
       ALTVERSE_API_URL: ${{ secrets.ALTVERSE_API_URL }}
       VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
@@ -30,20 +29,16 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run analytics fetcher and rename output
+      - name: Run analytics fetcher and write to analytics.json
         run: |
-          # Run the python script which creates 'analytics.json'
+          # Run the python script to write to analytics.json
           python analytics_fetcher.py
 
-          # Create the new filename with a unix timestamp
-          TIMESTAMP=$(date +%s)
-          NEW_FILENAME="analytics-${TIMESTAMP}.json"
-
-          # Rename the file
-          mv analytics.json ${NEW_FILENAME}
-
-          # Pass the new filename to subsequent steps
-          echo "ANALYTICS_FILENAME=${NEW_FILENAME}" >> $GITHUB_ENV
+          # Ensure file exists and is named correctly
+          if [ ! -f analytics.json ]; then
+            echo "Error: analytics.json not found after script execution."
+            exit 1
+          fi
 
       - name: Configure Git
         run: |
@@ -52,12 +47,15 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          git add ${{ env.ANALYTICS_FILENAME }}
-          # Verify there are changes to commit (so as not to create empty commits)
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update analytics data $(date +'%Y-%m-%d')" && git push)
+          git add analytics.json
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update analytics data $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
 
       - name: Wait for GitHub synchronization
-        # Gives a few seconds for the push to be processed before any potential next step
         run: sleep 10s
 
       - name: Trigger Vercel Deployment
