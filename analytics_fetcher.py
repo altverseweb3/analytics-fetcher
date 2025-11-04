@@ -109,7 +109,7 @@ def fetch_all_analytics():
             # Store all results for this period_type
             all_metrics["periodic_stats"][period_type] = current_period_results
 
-    output_filename = "analytics_dump.json"
+    output_filename = "analytics.json"
     try:
         with open(output_filename, "w") as f:
             json.dump(all_metrics, f, indent=2)
