@@ -7,7 +7,7 @@
     "swap_count": 35,
     "lending_count": 1,
     "earn_count": 1,
-    "dapp_entrances": 103,
+    "dapp_entrances": 108,
     "total_users": 5
   },
   "total_swap_stats": {
@@ -49,6 +49,11 @@
   "periodic_stats": {
     "daily": {
       "periodic_user_stats": [
+        {
+          "period_start": "2025-11-05",
+          "new_users": 0,
+          "active_users": 0
+        },
         {
           "period_start": "2025-11-04",
           "new_users": 0,
@@ -193,21 +198,26 @@
           "period_start": "2025-10-07",
           "new_users": 0,
           "active_users": 0
-        },
-        {
-          "period_start": "2025-10-06",
-          "new_users": 0,
-          "active_users": 0
         }
       ],
       "periodic_activity_stats": [
+        {
+          "period_start": "2025-11-05",
+          "total_transactions": 0,
+          "swap_count": 0,
+          "lending_count": 0,
+          "earn_count": 0,
+          "dapp_entrances": 1,
+          "active_users": 0,
+          "transactions_per_active_user": 0
+        },
         {
           "period_start": "2025-11-04",
           "total_transactions": 0,
           "swap_count": 0,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 1,
+          "dapp_entrances": 5,
           "active_users": 0,
           "transactions_per_active_user": 0
         },
@@ -490,19 +500,16 @@
           "dapp_entrances": 0,
           "active_users": 0,
           "transactions_per_active_user": 0
-        },
-        {
-          "period_start": "2025-10-06",
-          "total_transactions": 0,
-          "swap_count": 0,
-          "lending_count": 0,
-          "earn_count": 0,
-          "dapp_entrances": 0,
-          "active_users": 0,
-          "transactions_per_active_user": 0
         }
       ],
       "periodic_swap_stats": [
+        {
+          "period_start": "2025-11-05",
+          "total_swap_count": 0,
+          "swap_routes": {},
+          "cross_chain_count": 0,
+          "same_chain_count": 0
+        },
         {
           "period_start": "2025-11-04",
           "total_swap_count": 0,
@@ -718,16 +725,14 @@
           "swap_routes": {},
           "cross_chain_count": 0,
           "same_chain_count": 0
-        },
-        {
-          "period_start": "2025-10-06",
-          "total_swap_count": 0,
-          "swap_routes": {},
-          "cross_chain_count": 0,
-          "same_chain_count": 0
         }
       ],
       "periodic_lending_stats": [
+        {
+          "period_start": "2025-11-05",
+          "total_lending_count": 0,
+          "breakdown": []
+        },
         {
           "period_start": "2025-11-04",
           "total_lending_count": 0,
@@ -878,14 +883,16 @@
           "period_start": "2025-10-07",
           "total_lending_count": 0,
           "breakdown": []
-        },
-        {
-          "period_start": "2025-10-06",
-          "total_lending_count": 0,
-          "breakdown": []
         }
       ],
       "periodic_earn_stats": [
+        {
+          "period_start": "2025-11-05",
+          "total_earn_count": 0,
+          "by_chain": {},
+          "by_protocol": {},
+          "by_chain_protocol": {}
+        },
         {
           "period_start": "2025-11-04",
           "total_earn_count": 0,
@@ -1090,13 +1097,6 @@
         },
         {
           "period_start": "2025-10-07",
-          "total_earn_count": 0,
-          "by_chain": {},
-          "by_protocol": {},
-          "by_chain_protocol": {}
-        },
-        {
-          "period_start": "2025-10-06",
           "total_earn_count": 0,
           "by_chain": {},
           "by_protocol": {},
@@ -1384,7 +1384,7 @@
           "swap_count": 3,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 13,
+          "dapp_entrances": 18,
           "active_users": 2,
           "transactions_per_active_user": 1.5
         },
@@ -3045,7 +3045,7 @@
           "swap_count": 25,
           "lending_count": 0,
           "earn_count": 0,
-          "dapp_entrances": 37,
+          "dapp_entrances": 42,
           "active_users": 3,
           "transactions_per_active_user": 8.333333333333334
         },
