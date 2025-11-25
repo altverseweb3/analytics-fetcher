@@ -52,6 +52,11 @@
     "daily": {
       "periodic_user_stats": [
         {
+          "period_start": "2025-11-25",
+          "new_users": 0,
+          "active_users": 0
+        },
+        {
           "period_start": "2025-11-24",
           "new_users": 0,
           "active_users": 0
@@ -195,14 +200,19 @@
           "period_start": "2025-10-27",
           "new_users": 0,
           "active_users": 1
-        },
-        {
-          "period_start": "2025-10-26",
-          "new_users": 2,
-          "active_users": 2
         }
       ],
       "periodic_activity_stats": [
+        {
+          "period_start": "2025-11-25",
+          "total_transactions": 0,
+          "swap_count": 0,
+          "lending_count": 0,
+          "earn_count": 0,
+          "dapp_entrances": 0,
+          "active_users": 0,
+          "transactions_per_active_user": 0
+        },
         {
           "period_start": "2025-11-24",
           "total_transactions": 0,
@@ -492,19 +502,16 @@
           "dapp_entrances": 20,
           "active_users": 1,
           "transactions_per_active_user": 3
-        },
-        {
-          "period_start": "2025-10-26",
-          "total_transactions": 2,
-          "swap_count": 2,
-          "lending_count": 0,
-          "earn_count": 0,
-          "dapp_entrances": 15,
-          "active_users": 2,
-          "transactions_per_active_user": 1
         }
       ],
       "periodic_swap_stats": [
+        {
+          "period_start": "2025-11-25",
+          "total_swap_count": 0,
+          "swap_routes": {},
+          "cross_chain_count": 0,
+          "same_chain_count": 0
+        },
         {
           "period_start": "2025-11-24",
           "total_swap_count": 0,
@@ -721,19 +728,14 @@
           },
           "cross_chain_count": 1,
           "same_chain_count": 0
-        },
-        {
-          "period_start": "2025-10-26",
-          "total_swap_count": 2,
-          "swap_routes": {
-            "arbitrum,solana": 1,
-            "ethereum,solana": 1
-          },
-          "cross_chain_count": 2,
-          "same_chain_count": 0
         }
       ],
       "periodic_lending_stats": [
+        {
+          "period_start": "2025-11-25",
+          "total_lending_count": 0,
+          "breakdown": []
+        },
         {
           "period_start": "2025-11-24",
           "total_lending_count": 0,
@@ -884,14 +886,16 @@
               "count": 1
             }
           ]
-        },
-        {
-          "period_start": "2025-10-26",
-          "total_lending_count": 0,
-          "breakdown": []
         }
       ],
       "periodic_earn_stats": [
+        {
+          "period_start": "2025-11-25",
+          "total_earn_count": 0,
+          "by_chain": {},
+          "by_protocol": {},
+          "by_chain_protocol": {}
+        },
         {
           "period_start": "2025-11-24",
           "total_earn_count": 0,
@@ -1100,13 +1104,6 @@
           "by_chain_protocol": {
             "ethereum#etherFi": 1
           }
-        },
-        {
-          "period_start": "2025-10-26",
-          "total_earn_count": 0,
-          "by_chain": {},
-          "by_protocol": {},
-          "by_chain_protocol": {}
         }
       ]
     },
