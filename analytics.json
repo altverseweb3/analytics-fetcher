@@ -52,6 +52,11 @@
     "daily": {
       "periodic_user_stats": [
         {
+          "period_start": "2025-12-03",
+          "new_users": 0,
+          "active_users": 0
+        },
+        {
           "period_start": "2025-12-02",
           "new_users": 0,
           "active_users": 0
@@ -195,14 +200,19 @@
           "period_start": "2025-11-04",
           "new_users": 0,
           "active_users": 0
-        },
-        {
-          "period_start": "2025-11-03",
-          "new_users": 1,
-          "active_users": 2
         }
       ],
       "periodic_activity_stats": [
+        {
+          "period_start": "2025-12-03",
+          "total_transactions": 0,
+          "swap_count": 0,
+          "lending_count": 0,
+          "earn_count": 0,
+          "dapp_entrances": 0,
+          "active_users": 0,
+          "transactions_per_active_user": 0
+        },
         {
           "period_start": "2025-12-02",
           "total_transactions": 0,
@@ -492,19 +502,16 @@
           "dapp_entrances": 5,
           "active_users": 0,
           "transactions_per_active_user": 0
-        },
-        {
-          "period_start": "2025-11-03",
-          "total_transactions": 3,
-          "swap_count": 3,
-          "lending_count": 0,
-          "earn_count": 0,
-          "dapp_entrances": 12,
-          "active_users": 2,
-          "transactions_per_active_user": 1.5
         }
       ],
       "periodic_swap_stats": [
+        {
+          "period_start": "2025-12-03",
+          "total_swap_count": 0,
+          "swap_routes": {},
+          "cross_chain_count": 0,
+          "same_chain_count": 0
+        },
         {
           "period_start": "2025-12-02",
           "total_swap_count": 0,
@@ -711,19 +718,14 @@
           "swap_routes": {},
           "cross_chain_count": 0,
           "same_chain_count": 0
-        },
-        {
-          "period_start": "2025-11-03",
-          "total_swap_count": 3,
-          "swap_routes": {
-            "base,base": 2,
-            "solana,arbitrum": 1
-          },
-          "cross_chain_count": 1,
-          "same_chain_count": 2
         }
       ],
       "periodic_lending_stats": [
+        {
+          "period_start": "2025-12-03",
+          "total_lending_count": 0,
+          "breakdown": []
+        },
         {
           "period_start": "2025-12-02",
           "total_lending_count": 0,
@@ -866,17 +868,19 @@
         },
         {
           "period_start": "2025-11-04",
-          "total_lending_count": 0,
-          "breakdown": []
-        },
-        {
-          "period_start": "2025-11-03",
           "total_lending_count": 0,
           "breakdown": []
         }
       ],
       "periodic_earn_stats": [
         {
+          "period_start": "2025-12-03",
+          "total_earn_count": 0,
+          "by_chain": {},
+          "by_protocol": {},
+          "by_chain_protocol": {}
+        },
+        {
           "period_start": "2025-12-02",
           "total_earn_count": 0,
           "by_chain": {},
@@ -1074,13 +1078,6 @@
         },
         {
           "period_start": "2025-11-04",
-          "total_earn_count": 0,
-          "by_chain": {},
-          "by_protocol": {},
-          "by_chain_protocol": {}
-        },
-        {
-          "period_start": "2025-11-03",
           "total_earn_count": 0,
           "by_chain": {},
           "by_protocol": {},
